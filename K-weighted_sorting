@@ -1,0 +1,41 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    long long int n,i,j,k,t,a[1000000],s,b;
+    cin>>n>>k;
+    for(i=0;i<n;i++)
+    {
+        cin>>a[i];
+    }
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;j++)
+        {
+            if(a[j]%k>a[i]%k)
+            {
+                t=a[j];
+                a[j]=a[i];
+                a[i]=t;
+            }
+            else if(a[j]%k==a[i]%k)
+            {
+            if(a[j]<a[i])
+            {
+                t=a[i];
+                a[i]=a[j];
+                a[j]=t;
+            }
+                 
+            }
+        }
+        
+    }
+    for(j=0;j<n;j++)
+        {
+            cout<<a[j]<<" ";
+        }
+        cout<<endl;
+    return 0;
+}
